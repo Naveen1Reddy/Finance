@@ -8,10 +8,11 @@ TYPE = (
     ('negative' , 'Negative')
 )
 
-class profile(models.Model):
+class Profile(models.Model):
     user = models.ForeignKey(User , on_delete = models.CASCADE)
     income = models.FloatField()
-    balance = models.FloatField(null= True)
+    balance = models.FloatField(blank= True , null= True)
+    expenses = models.FloatField(default= 0)
 
 
 class Expense(models.Model):
